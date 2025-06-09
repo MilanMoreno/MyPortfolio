@@ -1,3 +1,8 @@
+/* Import Tailwind CSS */
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
+
 :root {
   --color-background-primary: #141D2F;
   --color-accent-primary: #70E61C;
@@ -90,10 +95,6 @@ a {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Import Tailwind CSS */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 
 /* Stil für die Trennlinien */
 .section-divider {

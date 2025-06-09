@@ -19,17 +19,19 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         </div>
         
         <div class="hero__text-container">
-          <div class="hero__vertical-text">
-            I am
-          </div>
-          <div class="hero__main-content" [@fadeInUp]>
-            <h1 class="hero__name">{{ 'HERO.NAME' | translate }}</h1>
-            <p class="hero__title">{{ 'HERO.JOBTITLE' | translate }}</p>
-            
-            <div class="hero__cta-wrapper">
-              <a href="#contact" class="hero__cta">
-                {{ 'HERO.LETSTALK' | translate }}
-              </a>
+          <div class="hero__intro">
+            <div class="hero__intro-text" [@fadeInLeft]>
+              {{ 'HERO.IAM' | translate }}
+            </div>
+            <div class="hero__name-container" [@fadeInUp]>
+              <h1 class="hero__name">{{ 'HERO.NAME' | translate }}</h1>
+              <p class="hero__title">{{ 'HERO.JOBTITLE' | translate }}</p>
+              
+              <div class="hero__cta-wrapper">
+                <a href="#contact" class="hero__cta">
+                  {{ 'HERO.LETSTALK' | translate }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -93,10 +95,9 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       align-items: center;
       flex: 1;
       width: 100%;
-      padding: 0 100px;
+      padding: 100px;
       margin-top: -var(--header-height);
       position: relative;
-      z-index: 2;
     }
 
     .hero__left-container {
@@ -105,6 +106,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 2;
     }
 
     .hero__image {
@@ -112,6 +114,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       object-fit: contain;
       position: relative;
       z-index: 3;
+      animation: float 6s ease-in-out infinite;
     }
 
     .hero__image-shadow {
@@ -127,25 +130,31 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
     }
 
     .hero__text-container {
-      width: 50%;
-      display: flex;
-      align-items: center;
+      position: absolute;
+      left: 718px;
+      top: 172px;
       z-index: 3;
     }
+.hero__intro {
+  display: flex;
+  align-items: center;
+  gap: 0px; 
 
-    .hero__vertical-text {
-      transform: rotate(-90deg);
-      font-size: 32px;
-      color: var(--color-text-primary);
-      white-space: nowrap;
-      margin-right: 20px;
-      transform-origin: center right;
+
+    }
+.hero__intro-text {
+  transform: rotate(-90deg);
+  font-size: 32px;
+  padding-left: 0;        
+  margin-right: 15px;     
+  color: var(--color-text-primary);
+  white-space: nowrap;
     }
 
-    .hero__main-content {
+    .hero__name-container {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
     }
 
     .hero__name {
@@ -290,6 +299,12 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         padding: 0 50px;
       }
 
+      .hero__text-container {
+        position: relative;
+        left: auto;
+        top: auto;
+      }
+
       .hero__image {
         height: 65vh;
       }
@@ -315,17 +330,19 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       .hero__text-container {
         width: 100%;
         order: 2;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      .hero__main-content {
+      .hero__intro {
+        flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
-      .hero__vertical-text {
+      .hero__intro-text {
         transform: none;
-        margin-right: 0;
         margin-bottom: 20px;
       }
 
@@ -351,7 +368,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         font-size: 28px;
       }
 
-      .hero__vertical-text {
+      .hero__intro-text {
         font-size: 24px;
       }
 
@@ -379,7 +396,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         font-size: 24px;
       }
 
-      .hero__vertical-text {
+      .hero__intro-text {
         font-size: 20px;
       }
 
